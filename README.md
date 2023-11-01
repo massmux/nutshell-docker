@@ -8,10 +8,10 @@ Cashu is an Ecash implementation based on David Wagner's variant of Chaumian bli
 
 ## Install and run
 
-get image
+get image from dockerhub
 
 ```
-git pull massmux/nutshell
+docker pull massmux/nutshell
 ```
 
 configure the .env file (use the .env.example provided)
