@@ -8,13 +8,16 @@ Cashu is an Ecash implementation based on David Wagner's variant of Chaumian bli
 
 ## Install and run
 
-get image from dockerhub
+This will run a nutshell system with postgreSQL included.
+
+First thing is to get image from dockerhub
 
 ```
 docker pull massmux/nutshell
 ```
 
-configure the .env file (use the .env.example provided)
+- configure the .env file (use the .env.example provided)
+- configure the docker-compose.yml file to define postgreSQL password
 
 Run
 

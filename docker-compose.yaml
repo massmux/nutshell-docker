@@ -1,18 +1,18 @@
 version: "3"
 services:
   mint:
-    container_name: mint
-    image: massmux/nutshell
+    image: massmux/nutshell:0.14.0
     volumes:
       - ${PWD}/.cashu:/root/.cashu
       - ${PWD}/.env:/app/.env
       - ${PWD}/data:/app/data
     ports:
       - "3338:3338"
+    links:
+      - postgres
     command: ["poetry", "run", "mint", "--port", "3338", "--host", "0.0.0.0"]
   wallet:
-    image: massmux/nutshell
-    container_name: wallet
+    image: massmux/nutshell:0.14.0
     ports:
       - "4448:4448"
     depends_on:
@@ -22,4 +22,16 @@ services:
     environment:
       - MINT_URL=http://mint:3338
       - API_HOST=0.0.0.0
+    links:
+      - postgres
     command: ["poetry", "run", "cashu", "-d"]
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: CASHUDBPASS
+      POSTGRES_DB: cashudb
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ${PWD}/pgdata:/var/lib/postgresql/data
+      - ${PWD}/pgtmp:/var/tmp
+

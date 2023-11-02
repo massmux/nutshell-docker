@@ -4,3 +4,5 @@ __pycache__/
 .env
 data
 cashu
+pgdata
+pgtmp
