@@ -3,6 +3,6 @@ __pycache__/
 *$py.class
 .env
 data
-cashu
+.cashu
 pgdata
 pgtmp

@@ -15,7 +15,7 @@ This will run a nutshell system with postgreSQL included.
 First step is to get image from dockerhub
 
 ```
-docker pull massmux/nutshell:0.14.0
+docker pull massmux/nutshell:0.14.1
 ```
 
 - configure the .env file (use the .env.example provided)
