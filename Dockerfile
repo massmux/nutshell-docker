@@ -8,9 +8,9 @@ RUN apt-get install -y build-essential automake pkg-config libtool libffi-dev wg
 RUN curl -sSL https://install.python-poetry.org | python3 -
 ENV PATH="/root/.local/bin:$PATH"
 WORKDIR /app
-RUN 	cd /app && wget https://github.com/cashubtc/nutshell/archive/refs/tags/0.14.1.tar.gz && \
-	tar xzvf 0.14.1.tar.gz && \
-	mv nutshell-0.14.1/* .
+RUN 	cd /app && wget https://github.com/cashubtc/nutshell/archive/refs/tags/0.15.0.tar.gz && \
+	tar xzvf 0.15.0.tar.gz && \
+	mv nutshell-0.15.0/* .
 
 
 RUN poetry config virtualenvs.create false
